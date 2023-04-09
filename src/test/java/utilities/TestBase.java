@@ -14,10 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class TestBase {
-
+    //abstract etmek zorunda degilim
+    //WebDriver'imi burada tanimladim arik direkt driver.get() seklinde kullanabilecegim
     //TestBase class'indan obje olusturmanin onune gecilmesi icin abstract yapilabilir
     //Orn: TestBase = new TestBase
-    //Bu class'a extend ettigimiz test classlarinda ulasabiliriz.
+    //Bu class'i extend ettigimiz test classlarinda driver'a direk ulasabiliriz.
     protected static WebDriver driver;
 
     @Before
