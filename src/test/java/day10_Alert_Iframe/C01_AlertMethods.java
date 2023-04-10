@@ -9,6 +9,15 @@ import utilities.TestBase;
 public class C01_AlertMethods extends TestBase {
 
 
+    /* burada hoca sunlari gosterdi:
+    -->bekle()
+    -->alertAccept()
+    -->alertDismiss();
+    -->alertprompt();
+
+     */
+
+
     @Test
     public void acceptAlert() throws InterruptedException {
         // https://testcenter.techproeducation.com/index.php?page=javascript-alerts adresine gidin.
@@ -16,8 +25,8 @@ public class C01_AlertMethods extends TestBase {
 
         //    1. butona tıklayın, uyarıdaki OK butonuna tıklayın ve result mesajının  “You successfully clicked an alert” oldugunu test edin.
         driver.findElement(By.xpath("//*[text()='Click for JS Alert']")).click();
-        bekle(4);
-        alertAccept();
+        bekle(4);//ayni sekilde bekle() methodunuda testBace de olusturdum
+        alertAccept();//TestBace classinda olusturdum bu methodu bakabilirsin bundan dolayi boyle kisa yazdi
         bekle(4);
         String actualText = driver.findElement(By.xpath("//*[@id='result']")).getText();
         String expectedText = "You successfully clicked an alert";

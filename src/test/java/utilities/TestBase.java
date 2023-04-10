@@ -36,6 +36,10 @@ public abstract class TestBase {
     }
 
     //HARD WAIT METHOD
+    //biz bu bekle methodunu istedigimiz yerde rahatlikla kullanabilecegiz
+    //ve her saniyesinde exception firlatmasin diye "try catch" blogu icine aliyorum
+    //exception attiginda sürekli ugrasmaktansa yani altinin kirmizi yanmasindansa
+    //burada hallediyorum ki baska yerlerde ugrasmayayim
     public static void bekle(int saniye) {
         try {
             Thread.sleep(saniye * 1000);
@@ -43,7 +47,7 @@ public abstract class TestBase {
             throw new RuntimeException(e);
         }
     }
-
+    //buraya method yukluyorum ve bir guzellll baska classlarimda kullaniyorum
     //Alert ACCEPT
     public static void alertAccept() {
         driver.switchTo().alert().accept();
