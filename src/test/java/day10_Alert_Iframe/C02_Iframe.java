@@ -31,7 +31,9 @@ public class C02_Iframe extends TestBase {
         -iframe'i locate ederekte örneğin yukarıdaki kodun "iframe[id='outerIframe']" ccsSelector ile locate edilmiş hali
         -id ve name attributu varsa "driver.switchTo().frame("outerIframe")" bu şekildede geçiş yapabilirsiniz
          */
-        String actualText2 = driver.findElement(By.xpath("//*[text()='Applications lists']")).getText();
+        String actualText2 = driver
+                             .findElement(By.xpath("//*[text()='Applications lists']"))
+                             .getText();
         Assert.assertEquals(actualText2,"Applications lists");
 
         //➢	Son olarak footer daki ‘Povered By’ yazisini varligini test edilip

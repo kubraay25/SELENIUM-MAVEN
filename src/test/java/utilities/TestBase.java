@@ -101,5 +101,38 @@ public abstract class TestBase {
     //SwitchToWindow2
     public static void window(int sayi){
         driver.switchTo().window(driver.getWindowHandles().toArray()[sayi].toString());
+        //bu ifadenin aciklamasini asagida yazdim
+
+     /* "driver.switchTo()" ifadesi,
+     WebDriver kullanılarak mevcut pencere içindeki içeriği değiştirmek için
+     kullanılan bir yöntemdir. Bu yöntem, WebDriver'ın mevcut durumunu belirli
+     bir pencereye veya iframe'e geçirmenizi sağlar.
+
+"window()" ifadesi,
+WebDriver'ın içinde bulunduğu pencereye veya iframe'e geçmek için
+kullanılan bir yöntemdir. Bu yöntem, açık olan pencereler veya iframe'ler
+arasında geçiş yapmanızı sağlar.
+
+"driver.getWindowHandles()" ifadesi,
+WebDriver kullanılarak açık olan tüm pencerelerin handle'larını içeren
+bir Set nesnesi döndürür.
+
+"toArray()" ifadesi,
+Set nesnesini diziye dönüştürür.
+
+"[sayi]" ifadesi,
+dizide belirtilen indeksteki elemanı seçer.
+"sayi" değişkeni burada, hangi pencereye geçmek istediğimizi
+belirten bir sayısal değerdir.
+
+"toString()" ifadesi,
+seçilen elemanın String türüne dönüştürülmesini sağlar.
+
+Sonuç olarak, bu ifade,
+açık olan tüm pencerelerin handle'larını içeren bir Set nesnesi alır,
+bunu bir diziye dönüştürür, belirtilen indeksteki elemanı seçer ve
+bu elemanın handle'ını kullanarak WebDriver'ın mevcut durumunu belirli bir
+pencereye veya iframe'e geçirir.*/
+
     }
 }
