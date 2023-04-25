@@ -14,6 +14,10 @@ public class C03_Cookies extends TestBase {
         //1-Amazon anasayfaya gidin
         driver.get("https://amazon.com");
 
+
+
+
+
         //2-tum cookie’leri listeleyin
         //TÜM COOKIE'LERI LİSTELEYEBİLMEK İÇİN driver.manage().getCookies() METHODUNU KULLANIRIZ
         Set<Cookie> cookieSet = driver.manage().getCookies();
@@ -25,11 +29,19 @@ public class C03_Cookies extends TestBase {
             sayac++;
         }
 
+
+
+
+
         //3-Sayfadaki cookies sayisinin 5’den buyuk oldugunu test edin
         // cookies sayisina locate aldigimiz yerden bakiyoruz
         //"uygulamalar" kismindan tikliyoruz
         int cookieSayisi = cookieSet.size();
         Assert.assertTrue(cookieSayisi>5);
+
+
+
+
 
         //4-ismi i18n-prefs olan cookie degerinin USD oldugunu test edin
         String cookieValue = driver.manage().getCookieNamed("i18n-prefs").getValue();
@@ -39,17 +51,25 @@ public class C03_Cookies extends TestBase {
         String cookieValue = --> USD
          */
         Assert.assertEquals("USD",cookieValue);
-        /*
-        for (Cookie each:cookieSet) {
+
+
+         //yukardaki islemin ikinci yolu
+         /*  for (Cookie each:cookieSet) {
             if (each.getName().equals("i18n-prefs")){
                 Assert.assertEquals("USD",cookieValue);
             }
-        }
-         */
+        }    */
+
+
+
 
         //5-ismi “en sevdigim cookie” ve degeri “cikolatali” olan bir cookie  olusturun ve sayfaya ekleyin
         Cookie cookie = new Cookie("en sevdigim cookie","cikolatali");
         driver.manage().addCookie(cookie);
+
+
+
+
 
         //6-eklediginiz cookie’nin sayfaya eklendigini test edin
         cookieSet = driver.manage().getCookies();
@@ -58,6 +78,9 @@ public class C03_Cookies extends TestBase {
             System.out.println(sayac+ ".ci cookie: "+cookie1);
             sayac++;
         }
+
+
+
 
         //7-ismi skin olan cookie’yi silin ve silindigini test edin
         int silinmedenOnce = driver.manage().getCookies().size();
@@ -71,6 +94,10 @@ public class C03_Cookies extends TestBase {
             System.out.println(sayac+ ".ci cookie: "+cookie1);
             sayac++;
         }
+
+
+
+
 
         //8-tum cookie’leri silin ve silindigini test edin
         driver.manage().deleteAllCookies();
