@@ -50,19 +50,53 @@ public class C03_Actions03 extends TestBase {
         actions.sendKeys(Keys.END);
         //Sayfanın üst tarafına gidin
         bekle(4);
-        actions.sendKeys(Keys.HOME).build().perform();//perform() ile action objemi işleme alır
-        //build() methodu ile birden fazla oluşturduğumuz action objesini birbirine bağlayabilirz
+        //home tusu bir sayfada en uste gitmek icin kullanilir
+        //build() methodu ile birden fazla isleri zincir halinde birbirine baglayabiliriz
+        //mesela bir suru send keys methodu yazarim yazarim en sonda build yapip hepsini birbirine baglarim
+        //perform() ile action objemi işleme alıyorum bir nevi methodlari calistiriyorum
+        //builde baglayacaksam methodlarin hepsinin sonuna "perform" yazmam en son yazarim
+        actions.sendKeys(Keys.HOME).build().perform();
+
     }
+
+
+
 
     @Test
     public void actions3() {
         //Amazon anasayfasına gidin
         driver.get("https://amazon.com");
+
+
         //Arama kutusunda büyük harflerle samsung aratalım
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
+        //"shift" tusuna basili tuttugumuzda buyuk yazdirir "sa"yi buyuk yazdiracak
+        //elimi sihift ten kaldirdigimda da yine Keys Shift yaziyorum
         aramaKutusu.sendKeys(Keys.SHIFT,"sa",Keys.SHIFT,"msung",Keys.ENTER);//SAmsung
+        //geri geliyorum arama kutusuna tekrardan "iphone" yazdiriyorum
         driver.navigate().back();
         WebElement aramaKutusuu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusuu.sendKeys(Keys.SHIFT,"iphone");//IPHONE
+
+
+//        //SHIFT kullanmadan da asagida ki gibi yapabiliriz
+//            WebElement aramaKutusu1 = driver.findElement(By.id("twotabsearchtextbox"));
+//                aramaKutusu1.sendKeys("SAMSUNG", Keys.ENTER);
+//
+//              driver.navigate().back();
+//
+//             WebElement aramaKutusuu1 = driver.findElement(By.id("twotabsearchtextbox"));
+//              aramaKutusuu1.sendKeys("IPHONE", Keys.ENTER);
+//           // Burada, sendKeys() yöntemi kullanılarak ilk önce "SAMSUNG" ve "IPHONE"
+//           // metinleri doğrudan gönderildi. shift tuşu kullanımına gerek kalmadı.
+
+
+
+
+
+
+
+
+
     }
 }
